@@ -122,6 +122,16 @@
 					side: 'right'
 				});
 
+		// Load background images
+		$('.bg-img').each(function() {
+			var $this = $(this),
+				$bg = $this.data('bg');
+				
+			if ($bg) {
+				$this.css('background-image', 'url("' + $bg + '")');
+			}
+		});
+
 	});
 
 })(jQuery);

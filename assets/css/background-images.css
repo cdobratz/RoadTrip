@@ -1,0 +1,44 @@
+.bg-img {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.bg-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adds a slight dark overlay */
+}
+
+/* Specific section styles */
+#banner.bg-img {
+    min-height: 100vh;
+}
+
+.wrapper.post.bg-img {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile optimization */
+@media screen and (max-width: 736px) {
+    .bg-img {
+        background-attachment: scroll; /* Better mobile performance */
+    }
+    
+    #banner.bg-img {
+        min-height: 80vh;
+    }
+    
+    .wrapper.post.bg-img {
+        min-height: 50vh;
+    }
+}

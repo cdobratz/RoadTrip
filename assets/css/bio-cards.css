@@ -1,0 +1,52 @@
+.bio-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.bio-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.bio-card:hover {
+    transform: translateY(-5px);
+}
+
+.bio-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+/* Specific adjustments for individual photos */
+.bio-card[data-person="Jaiden"] img,
+.bio-card[data-person="Jacob"] img,
+.bio-card[data-person="Cassidy&Shira"] img {
+    object-position: center 20%;
+}
+
+.bio-card-content {
+    padding: 1.5rem;
+}
+
+.bio-card-content h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.bio-card-section {
+    color: #666;
+}
+
+.bio-card-section p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
