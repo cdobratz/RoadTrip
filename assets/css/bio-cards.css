@@ -1,8 +1,10 @@
 .bio-cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
     padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .bio-card {
@@ -11,10 +13,14 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .bio-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .bio-card img {
@@ -33,20 +39,47 @@
 
 .bio-card-content {
     padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
 }
 
 .bio-card-content h3 {
     margin: 0 0 1rem 0;
     color: #333;
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .bio-card-section {
     color: #666;
+    flex-grow: 1;
 }
 
 .bio-card-section p {
     margin: 0.5rem 0;
     font-size: 1rem;
     line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 980px) {
+    .bio-cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .bio-cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .bio-card img {
+        height: 300px;
+    }
 }
